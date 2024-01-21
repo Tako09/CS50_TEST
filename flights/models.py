@@ -19,7 +19,7 @@ class Flight(models.Model):
   
   def is_valid_flight(self):
     """Check if origin and destination are different and duration is greater than 0"""
-    return self.origin != self.destination and self.duration > 0 
+    return self.origin != self.destination or self.duration > 0 
   
 class Passenger(models.Model):
   first = models.CharField(max_length=64)
